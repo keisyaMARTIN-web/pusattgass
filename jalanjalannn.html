@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jalan Jalan Yuk andini & minkhaa</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Comic Sans MS',cursive;
+}
+
+body{
+height:100vh;
+background:linear-gradient(135deg,#ffc1e3,#ffe4f2);
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:25px;
+width:400px;
+text-align:center;
+box-shadow:0 10px 30px rgba(255,105,180,.3);
+}
+
+h1{
+color:#ff4fa1;
+margin-bottom:20px;
+}
+
+button{
+background:#ff69b4;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+margin:8px;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.page{
+display:none;
+margin-top:20px;
+}
+
+.active{
+display:block;
+}
+
+.card{
+background:#ffe6f2;
+padding:15px;
+border-radius:15px;
+margin-top:10px;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+from{
+transform:translateY(-100px);
+}
+to{
+transform:translateY(100vh);
+}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div id="home">
+<h1>💖 JALAN JALAN YUK ANDINI & MINKHAA! 💖</h1>
+<button onclick="showMenu()">Klik Di Sini ✨</button>
+</div>
+
+<div id="menu" class="page">
+<h2>Pilih Menu 💕</h2>
+
+<button onclick="showJadwal()">📅 Lihat Jadwal</button>
+
+<button onclick="showKet()">📍 Keterangan Lainnya</button>
+
+<br><br>
+<button onclick="backHome()">⬅ Kembali</button>
+</div>
+
+<div id="jadwal" class="page">
+<h2>📅 Jadwal</h2>
+
+<div class="card">
+09.00 - Kumpul di depan TP/ shelter terdekat 🚌<br>
+11.00 - photobooth📸 <br>
+13.00 - Makan di TP + Qtime🍜<br>
+15.00 -  alun alun SBY/ Museum🌟 nya 
+16.00 - pulang🥹🏡
+</div>
+
+<br>
+<button onclick="backMenu()">⬅ Kembali</button>
+</div>
+
+<div id="ket" class="page">
+<h2>📍 Keterangan Lainnya</h2>
+
+<div class="card">
+📍 Tempat : Tunjungan Plaza<br><br>
+
+👕 Dresscode : bebas 
+
+
+👨 tambahan : ada kakak kalkun gae ndampingii 
+             kita ke alun2 sby naik gocar 
+</div>
+
+<br>
+<button onclick="backMenu()">⬅ Kembali</button>
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<25;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(h);
+}
+
+function hideAll(){
+document.getElementById("home").style.display="none";
+document.getElementById("menu").style.display="none";
+document.getElementById("jadwal").style.display="none";
+document.getElementById("ket").style.display="none";
+}
+
+function showMenu(){
+hideAll();
+document.getElementById("menu").style.display="block";
+}
+
+function showJadwal(){
+hideAll();
+document.getElementById("jadwal").style.display="block";
+}
+
+function showKet(){
+hideAll();
+document.getElementById("ket").style.display="block";
+}
+
+function backHome(){
+hideAll();
+document.getElementById("home").style.display="block";
+}
+
+function backMenu(){
+hideAll();
+document.getElementById("menu").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
